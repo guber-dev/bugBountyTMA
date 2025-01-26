@@ -10,8 +10,31 @@
 .game-header {
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.score {
+  flex: 1;
+  text-align: left;
   color: var(--app-text-color);
+  background-color: var(--app-secondary-bg);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--app-text-color);
+  background-color: var(--app-secondary-bg);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .game-area {
@@ -24,7 +47,7 @@
   border: 1px solid var(--app-border-color);
 }
 
-.bug-button {
+.bug {
   position: absolute;
   padding: 0;
   width: 32px;
@@ -49,14 +72,68 @@
   }
 }
 
-.bug-icon {
-  width: 24px;
-  height: 24px;
+.game-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
   color: var(--app-text-color);
-  opacity: 0.9;
 }
 
-.game-message,
+.game-over {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  color: var(--app-text-color);
+}
+
+.game-over h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.game-over p {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.game-over-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.play-again-button,
+.share-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 140px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--app-text-color);
+}
+
+.play-again-button {
+  background-color: var(--app-accent-color);
+}
+
+.share-button {
+  background-color: var(--app-secondary-bg);
+}
+
 .game-stats {
   position: absolute;
   inset: 0;
@@ -64,33 +141,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 500;
   color: var(--app-text-color);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.game-stats > div {
+  color: var(--app-text-color);
+  background-color: var(--app-secondary-bg);
+  padding: 8px 16px;
+  border-radius: 8px;
+  min-width: 200px;
+  text-align: center;
 }
 
 .game-controls {
   width: 100%;
-}
-
-.start-button,
-.play-again-button,
-.share-button {
-  background-color: var(--app-accent-color);
-  color: var(--app-text-color);
-}
-
-.smash-button {
-  background-color: var(--app-secondary-bg);
-  color: var(--app-text-color);
-  opacity: 0.7;
-}
-
-.game-over-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
 }
 
 .refresh-icon, .share-icon {
@@ -107,12 +176,6 @@
   font-size: 18px;
   color: var(--tg-theme-hint-color, #999999);
   margin-bottom: 10px;
-}
-
-.score {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--tg-theme-text-color, #000000);
 }
 
 .catch-button {

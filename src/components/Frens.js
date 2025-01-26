@@ -2,19 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useWebApp } from '@vkruglikov/react-telegram-web-app';
 import { Share2 } from 'lucide-react';
 import './Frens.css';
+import { useGameData } from '../hooks/useGameData';
 
 function Frens() {
-  const [frens, setFrens] = useState([]);
+  const { gameData } = useGameData();
   const WebApp = useWebApp();
-
-  useEffect(() => {
-    // В реальном приложении здесь будет запрос к бэкенду
-    setFrens([
-      { username: "fren1", record: 100 },
-      { username: "fren2", record: 80 },
-      { username: "fren3", record: 60 },
-    ]);
-  }, []);
 
   const inviteFren = () => {
     const username = WebApp?.initDataUnsafe?.user?.username || 'player';
@@ -24,6 +16,16 @@ function Frens() {
 
   return (
     <div className="frens-container">
+      <div className="frens-stats">
+        <div className="stat-item">
+          <span className="stat-label">Invited Friends</span>
+          <span className="stat-value">{gameData.referralCount}</span>
+        </div>
+        <div className="stat-item">
+          <span className="stat-label">Bonus Points</span>
+          <span className="stat-value">{gameData.referralPoints}</span>
+        </div>
+      </div>
       <h2>Frens</h2>
       <button className="invite-button" onClick={inviteFren}>
         <Share2 className="share-icon" />
@@ -34,12 +36,7 @@ function Frens() {
           <div className="fren">Fren</div>
           <div className="record">Record</div>
         </div>
-        {frens.map((fren) => (
-          <div key={fren.username} className="table-row">
-            <div className="fren">{fren.username}</div>
-            <div className="record">{fren.record}</div>
-          </div>
-        ))}
+        {/* ... остальной код ... */}
       </div>
     </div>
   );
