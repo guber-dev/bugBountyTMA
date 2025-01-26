@@ -1,9 +1,79 @@
 .game-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
   padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.last-record {
+  font-size: 14px;
+  color: var(--tg-theme-hint-color, #999999);
+}
+
+.game-area {
+  position: relative;
+  background-color: var(--tg-theme-secondary-bg-color, #f0f0f0);
+  width: 100%;
+  height: 480px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bug-button {
+  position: absolute;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.bug-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--tg-theme-text-color, #000000);
+}
+
+.game-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.start-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--tg-theme-button-color, #2481cc);
+  color: var(--tg-theme-button-text-color, #ffffff);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.refresh-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .user-info {

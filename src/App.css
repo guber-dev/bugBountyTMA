@@ -3,6 +3,8 @@
   background-color: var(--tg-theme-bg-color, #ffffff);
   color: var(--tg-theme-text-color, #000000);
   min-height: 100vh;
+  padding-bottom: 60px;
+  position: relative;
 }
 
 .App-logo {
@@ -36,4 +38,29 @@
 
 main {
   padding: 20px;
+}
+
+.nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--tg-theme-bg-color, #ffffff);
+  border-top: 1px solid var(--tg-theme-hint-color, #999999);
+  padding: 8px;
+}
+
+.nav-bar button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--tg-theme-text-color, #000000);
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
 }
