@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/bugBountyTMA/static/css/main.aaa75cc7.css",
-    "main.js": "/bugBountyTMA/static/js/main.8311c757.js",
+    "main.css": "/bugBountyTMA/static/css/main.032edcfa.css",
+    "main.js": "/bugBountyTMA/static/js/main.dfa564ba.js",
     "static/js/685.b33919c2.chunk.js": "/bugBountyTMA/static/js/685.b33919c2.chunk.js",
     "index.html": "/bugBountyTMA/index.html"
   },
   "entrypoints": [
-    "static/css/main.aaa75cc7.css",
-    "static/js/main.8311c757.js"
+    "static/css/main.032edcfa.css",
+    "static/js/main.dfa564ba.js"
   ]
 }
