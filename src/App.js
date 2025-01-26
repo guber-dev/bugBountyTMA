@@ -8,11 +8,13 @@ import Frens from './components/Frens';
 
 function App() {
   const [activeScreen, setActiveScreen] = useState('play');
+  const [isGameActive, setIsGameActive] = useState(false);
   const WebApp = useWebApp();
 
   useEffect(() => {
     // Разворачиваем приложение на весь экран при запуске
     WebApp?.expand();
+    WebApp?.setViewportHeight(100);
   }, [WebApp]);
 
   return (
@@ -21,21 +23,26 @@ function App() {
         <h1>BugBounty Game</h1>
       </header>
       <main>
-        {activeScreen === 'play' && <Game />}
+        {activeScreen === 'play' && <Game onGameStateChange={setIsGameActive} />}
         {activeScreen === 'leaderboard' && <Leaderboard />}
         {activeScreen === 'frens' && <Frens />}
       </main>
-      <nav className="nav-bar">
-        <button onClick={() => setActiveScreen('leaderboard')}>
-          <Trophy className="nav-icon" />
-        </button>
-        <button onClick={() => setActiveScreen('play')}>
-          <Bug className="nav-icon" />
-        </button>
-        <button onClick={() => setActiveScreen('frens')}>
-          <Users className="nav-icon" />
-        </button>
-      </nav>
+      {!isGameActive && (
+        <nav className="nav-bar">
+          <button onClick={() => setActiveScreen('leaderboard')}>
+            <Trophy className="nav-icon" />
+            <span>Leaders</span>
+          </button>
+          <button onClick={() => setActiveScreen('play')}>
+            <Bug className="nav-icon" />
+            <span>Play</span>
+          </button>
+          <button onClick={() => setActiveScreen('frens')}>
+            <Users className="nav-icon" />
+            <span>Friends</span>
+          </button>
+        </nav>
+      )}
     </div>
   );
 }

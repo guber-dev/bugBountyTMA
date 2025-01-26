@@ -1,9 +1,17 @@
+:root {
+  --app-bg-color: #1a1a1a;
+  --app-text-color: #ffffff;
+  --app-secondary-bg: #2d2d2d;
+  --app-accent-color: #4a90e2;
+  --app-border-color: #3d3d3d;
+}
+
 .App {
   text-align: center;
-  background-color: var(--tg-theme-bg-color, #ffffff);
-  color: var(--tg-theme-text-color, #000000);
+  background-color: var(--app-bg-color);
+  color: var(--app-text-color);
   min-height: 100vh;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
   position: relative;
 }
 
@@ -38,6 +46,8 @@
 
 main {
   padding: 20px;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
 }
 
 .nav-bar {
@@ -47,20 +57,39 @@ main {
   right: 0;
   display: flex;
   justify-content: space-around;
-  background-color: var(--tg-theme-bg-color, #ffffff);
-  border-top: 1px solid var(--tg-theme-hint-color, #999999);
-  padding: 8px;
+  background-color: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--app-border-color);
+  padding: 12px 8px;
+  z-index: 1000;
 }
 
 .nav-bar button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
   background: none;
   border: none;
   padding: 8px;
   cursor: pointer;
-  color: var(--tg-theme-text-color, #000000);
+  color: var(--app-text-color);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.nav-bar button:hover,
+.nav-bar button:active {
+  opacity: 1;
 }
 
 .nav-icon {
   width: 24px;
   height: 24px;
+}
+
+.nav-bar button span {
+  font-size: 12px;
+  font-weight: 500;
 }
