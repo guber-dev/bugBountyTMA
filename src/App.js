@@ -1,9 +1,11 @@
 import React from 'react';
-import { WebApp } from '@vkruglikov/react-telegram-web-app';
+import { useWebApp } from '@vkruglikov/react-telegram-web-app';
 import './App.css';
 import Game from './components/Game';
 
 function App() {
+  const WebApp = useWebApp();
+
   return (
     <div className="App">
       <header className="App-header">
