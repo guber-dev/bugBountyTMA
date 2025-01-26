@@ -29,7 +29,7 @@ export function Frens({ username }: FrensProps) {
   }, [])
 
   const inviteFren = () => {
-    const referralLink = `https://t.me/BugBountyGame?start=REF_${username}`
+    const referralLink = `https://t.me/Bug_Bounty_Crypto_Bot?start=REF_${username}`
 
     if (typeof window !== "undefined" && window.Telegram?.WebApp) {
       window.Telegram.WebApp.openTelegramLink(referralLink)
