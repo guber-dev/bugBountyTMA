@@ -154,7 +154,10 @@ const Game: React.FC<GameProps> = ({ onGameStateChange }) => {
   return (
     <div className="game-container">
       <div className="game-header">
-        <div className="score">Score: {score}</div>
+        <div className="score">
+          <Bug className="score-icon" />
+          <span>{score}</span>
+        </div>
         <div className="timer">
           <Timer size={18} />
           <span>{timeLeft}s</span>

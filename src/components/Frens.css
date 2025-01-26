@@ -1,7 +1,106 @@
 .frens-container {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
   max-width: 400px;
   margin: 0 auto;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid var(--app-accent-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.user-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--app-text-color);
+}
+
+.user-username {
+  font-size: 14px;
+  color: var(--app-text-color);
+  opacity: 0.7;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background-color: var(--app-secondary-bg);
+  border-radius: 12px;
+  border: 1px solid var(--app-border-color);
+}
+
+.stat-icon {
+  color: var(--app-accent-color);
+  width: 24px;
+  height: 24px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--app-text-color);
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--app-text-color);
+  opacity: 0.7;
+}
+
+.share-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 24px;
+  background-color: var(--app-accent-color);
+  color: var(--app-text-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.share-button:hover {
+  opacity: 0.9;
+}
+
+.frens-container h2 {
+  color: var(--app-text-color);
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 .frens-stats {
@@ -21,25 +120,6 @@
   padding: 12px;
   border-radius: 12px;
   max-width: 160px;
-}
-
-.stat-label {
-  color: var(--app-text-color);
-  opacity: 0.7;
-  font-size: 12px;
-}
-
-.stat-value {
-  color: var(--app-text-color);
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.frens-container h2 {
-  color: var(--app-text-color);
-  font-size: 24px;
-  margin-bottom: 16px;
-  text-align: center;
 }
 
 .invite-button {

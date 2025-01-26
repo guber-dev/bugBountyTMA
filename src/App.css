@@ -11,7 +11,9 @@
   background-color: var(--app-bg-color);
   color: var(--app-text-color);
   min-height: 100vh;
+  padding-bottom: 80px;
   position: relative;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -44,8 +46,9 @@
 }
 
 main {
-  padding: 20px;
-  padding-bottom: 100px;
+  padding: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .nav-bar {
@@ -55,12 +58,14 @@ main {
   right: 0;
   display: flex;
   justify-content: space-around;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-top: 1px solid var(--app-border-color);
   padding: 12px 8px;
   z-index: 1000;
+  height: 72px;
+  box-sizing: border-box;
 }
 
 .nav-bar button {
